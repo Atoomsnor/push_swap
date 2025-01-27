@@ -6,11 +6,9 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 13:06:54 by roversch          #+#    #+#             */
-/*   Updated: 2025/01/27 14:17:04 by roversch         ###   ########.fr       */
+/*   Updated: 2025/01/27 17:58:22 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-make a struct i think for the instructions
 
 int	sa(swap a)	//swap the first 2 elements at the top of stack a. Do nothing if there is only one or no elements)
 
