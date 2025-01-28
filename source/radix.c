@@ -6,17 +6,17 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 16:17:27 by roversch          #+#    #+#             */
-/*   Updated: 2025/01/27 16:19:12 by roversch         ###   ########.fr       */
+/*   Updated: 2025/01/28 18:23:55 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-while (j++ < size)
-{
-	if (((head_a >> bit_position) & 1) == 1)
-		ra(stack_a)
-	else
-		pb(stack_a, stack_b)
-}
+// while (j++ < size)
+// {
+// 	if (((head_a >> bit_position) & 1) == 1)
+// 		ra(stack_a)
+// 	else
+// 		pb(stack_a, stack_b)
+// }
 
-While (stack_b)
-	pa(stack_a, stack b)
+// While (stack_b)
+// 	pa(stack_a, stack b)

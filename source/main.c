@@ -6,48 +6,64 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 16:45:57 by roversch          #+#    #+#             */
-/*   Updated: 2025/01/28 13:27:50 by roversch         ###   ########.fr       */
+/*   Updated: 2025/01/28 18:30:36 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
 
-void	initiate_stack(t_stack *stack, int size)
+void	initiate_stack_(t_stack *stack, int size)
 {
-	stack->array = (int *)malloc(sizeof(int) * size);
-		// if (!stack->array)
-		// 	return (NULL);
+	stack->array = (int *)malloc(sizeof(int) * size); //make malloc check
 	stack->size = size;
-	stack->index = -1;	//0 or -1?
+	stack->index = -1;
 }
 
-void	print_stack_(t_stack stack_a, t_stack stack_b, int size, char **argv)
+void	print_stack_(t_stack stack_a, t_stack stack_b)
 {
 	int	i;
 
 	i = 0;
-	printf("A	B\n");
-	while (i < size)
+	printf("A\tB\n");
+	while (i < stack_a.size || i < stack_b.size)
 	{
-		stack_a.array[++stack_a.index] = atoi(argv[i + 1]);
-		printf("%d	%d\n", stack_a.array[stack_a.index], stack_b.array[stack_b.index]);
+		if (i <= stack_a.index) //print elements of stack_a up to its index
+			printf("%d\t", stack_a.array[stack_a.index - i]);
+		else
+			printf("\t"); //empty space for stack_a
+		if (i <= stack_b.index) //print elements of stack_b up to its index
+			printf("%d", stack_b.array[stack_b.index - i]);
 		i++;
+		printf("\n");
 	}
+	printf("\n");
 }
 
 int	main(int argc, char **argv)
 {
-	t_stack stack_a, stack_b;
-	int	size;
-	int	i;
+	t_stack	stack_a;
+	t_stack	stack_b;
+	int		size;
+	int		i;
 
 	size = argc - 1;
-	initiate_stack(&stack_a, size);	//stack_a has the same shit as t_stack, we fill it in
-	initiate_stack(&stack_b, size);	//make sure to add malloc failchecks later
-
-	printf("Insturction\n");
-	print_stack_(stack_a, stack_b, size, argv);
+	initiate_stack_(&stack_a, size); //add malloc failchecks
+	initiate_stack_(&stack_b, size);
+	i = 0;
+	while (i < size)
+	{
+		stack_a.index++;
+		stack_a.array[stack_a.index] = atoi(argv[size - i]);
+		i++;
+	}
+	print_stack_(stack_a, stack_b);
+	pb(&stack_a, &stack_b);
+	print_stack_(stack_a, stack_b);
+	pb(&stack_a, &stack_b);
+	print_stack_(stack_a, stack_b);
+	pa(&stack_a, &stack_b);
+	print_stack_(stack_a, stack_b);
 
 	free(stack_a.array);
 	free(stack_b.array);

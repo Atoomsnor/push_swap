@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 16:17:20 by roversch          #+#    #+#             */
-/*   Updated: 2025/01/27 19:31:55 by roversch         ###   ########.fr       */
+/*   Updated: 2025/01/28 18:25:59 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,12 @@ typedef struct stack
 {
 	int	*array;
 	int	size;
-	int index;
+	int	index;
 }	t_stack;
 
-int	main(int argc, char **argv);
-
+int		main(int argc, char **argv);
+void	pb(t_stack *stack_a, t_stack *stack_b);
+void	pa(t_stack *stack_a, t_stack *stack_b);
 #endif
 
 // typedef struct node
