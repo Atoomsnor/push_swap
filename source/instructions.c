@@ -6,25 +6,45 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 13:06:54 by roversch          #+#    #+#             */
-/*   Updated: 2025/01/28 18:25:07 by roversch         ###   ########.fr       */
+/*   Updated: 2025/01/28 19:54:13 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
 
-// int	sa(swap a)	//swap the first 2 elements at the top of stack a. Do nothing if there is only one or no elements)
-
-// int	sb(swap b)	//swap the first 2 elements at the top of stack b. Do nothing if there is only one or no elements)
-
-// int	ss(swap a+b)	//sa and sb at the same time.
-
-void	pb(t_stack *stack_a, t_stack *stack_b)
+void	sa(t_stack *stack_a)
 {
-	printf("pb\n");
-	stack_b->index++;
-	stack_b->array[stack_b->index] = stack_a->array[stack_a->index];
-	stack_a->index--;
+	int	tmp;
+
+	printf("sa\n");
+	tmp = stack_a->array[stack_a->index];
+	stack_a->array[stack_a->index] = stack_a->array[stack_a->index - 1];
+	stack_a->array[stack_a->index - 1] = tmp;
+}
+
+void	sb(t_stack *stack_b)
+{
+	int	tmp;
+
+	printf("sb\n");
+	tmp = stack_b->array[stack_b->index];
+	stack_b->array[stack_b->index] = stack_b->array[stack_b->index - 1];
+	stack_b->array[stack_b->index - 1] = tmp;
+}
+
+void	ss(t_stack *stack_a, t_stack *stack_b)
+{
+	int	tmp_a;
+	int	tmp_b;
+
+	printf("ss\n");
+	tmp_a = stack_a->array[stack_a->index];
+	stack_a->array[stack_a->index] = stack_a->array[stack_a->index - 1];
+	stack_a->array[stack_a->index - 1] = tmp_a;
+	tmp_b = stack_b->array[stack_b->index];
+	stack_b->array[stack_b->index] = stack_b->array[stack_b->index - 1];
+	stack_b->array[stack_b->index - 1] = tmp_b;
 }
 
 void	pa(t_stack *stack_a, t_stack *stack_b)
@@ -33,6 +53,14 @@ void	pa(t_stack *stack_a, t_stack *stack_b)
 	stack_a->index++;
 	stack_a->array[stack_a->index] = stack_b->array[stack_b->index];
 	stack_b->index--;
+}
+
+void	pb(t_stack *stack_a, t_stack *stack_b)
+{
+	printf("pb\n");
+	stack_b->index++;
+	stack_b->array[stack_b->index] = stack_a->array[stack_a->index];
+	stack_a->index--;
 }
 
 // int	ra(rotate a)	//Shifts all the elements of the stack a up by one position. The first element becomes the last.
