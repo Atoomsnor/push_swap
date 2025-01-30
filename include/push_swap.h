@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 16:17:20 by roversch          #+#    #+#             */
-/*   Updated: 2025/01/28 19:05:27 by roversch         ###   ########.fr       */
+/*   Updated: 2025/01/30 15:19:34 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,21 @@ typedef struct stack
 	int	index;
 }	t_stack;
 
+// maybe make enum for (i < stack_a->index) when its in a a/b func
+
 int		main(int argc, char **argv);
+
 void	sa(t_stack *stack_a);
 void	sb(t_stack *stack_b);
 void	ss(t_stack *stack_a, t_stack *stack_b);
 void	pa(t_stack *stack_a, t_stack *stack_b);
 void	pb(t_stack *stack_a, t_stack *stack_b);
-
+void	ra(t_stack *stack_a);
+void	rb(t_stack *stack_b);
+void	rr(t_stack *stack_a, t_stack *stack_b);
+void	rra(t_stack *stack_a);
+void	rrb(t_stack *stack_b);
+void	rrr(t_stack *stack_a, t_stack *stack_b);
 #endif
 
 // typedef struct node

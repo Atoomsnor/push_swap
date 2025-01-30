@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 16:45:57 by roversch          #+#    #+#             */
-/*   Updated: 2025/01/28 19:09:56 by roversch         ###   ########.fr       */
+/*   Updated: 2025/01/30 16:15:15 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,25 +58,7 @@ int	main(int argc, char **argv)
 		i++;
 	}
 	print_stack_(stack_a, stack_b);
-	sa(&stack_a);
-	print_stack_(stack_a, stack_b);
-
-	pb(&stack_a, &stack_b);
-	print_stack_(stack_a, stack_b);
-	pb(&stack_a, &stack_b);
-	print_stack_(stack_a, stack_b);
-	
-	sb(&stack_b);
-	print_stack_(stack_a, stack_b);
-
-	ss(&stack_a, &stack_b);
-	print_stack_(stack_a, stack_b);
-	
-	pa(&stack_a, &stack_b);
-	print_stack_(stack_a, stack_b);
-	pa(&stack_a, &stack_b);
-	print_stack_(stack_a, stack_b);
-
+	ra(&stack_a);
 	free(stack_a.array);
 	free(stack_b.array);
 	return (0);
