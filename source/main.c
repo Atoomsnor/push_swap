@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 16:45:57 by roversch          #+#    #+#             */
-/*   Updated: 2025/01/30 16:15:15 by roversch         ###   ########.fr       */
+/*   Updated: 2025/01/31 14:43:43 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ void	print_stack_(t_stack stack_a, t_stack stack_b)
 	while (i < stack_a.size || i < stack_b.size)
 	{
 		if (i <= stack_a.index) //print elements of stack_a up to its index
-			printf("%d\t", stack_a.array[stack_a.index - i]);
+			printf("%d\t", stack_a.array[i]);
 		else
 			printf("\t"); //empty space for stack_a
 		if (i <= stack_b.index) //print elements of stack_b up to its index
-			printf("%d", stack_b.array[stack_b.index - i]);
+			printf("%d", stack_b.array[i]);
 		i++;
 		printf("\n");
 	}
@@ -53,12 +53,43 @@ int	main(int argc, char **argv)
 	i = 0;
 	while (i < size)
 	{
+		stack_a.array[i] = atoi(argv[i + 1]);
 		stack_a.index++;
-		stack_a.array[stack_a.index] = atoi(argv[size - i]);
 		i++;
 	}
 	print_stack_(stack_a, stack_b);
-	ra(&stack_a);
+
+	// pb(&stack_a, &stack_b);
+	// print_stack_(stack_a, stack_b);
+	// pb(&stack_a, &stack_b);
+	// print_stack_(stack_a, stack_b);
+	// pb(&stack_a, &stack_b);
+	// print_stack_(stack_a, stack_b);
+	// ra(&stack_a);
+	// print_stack_(stack_a, stack_b);
+	// rb(&stack_b);
+	// print_stack_(stack_a, stack_b);
+	// rr(&stack_a, &stack_b);
+	// print_stack_(stack_a, stack_b);
+	// sa(&stack_a);
+	// print_stack_(stack_a, stack_b);
+	// sb(&stack_b);
+	// print_stack_(stack_a, stack_b);
+	// ss(&stack_a, &stack_b);
+	// print_stack_(stack_a, stack_b);
+	// rra(&stack_a);
+	// print_stack_(stack_a, stack_b);
+	// rrb(&stack_b);
+	// print_stack_(stack_a, stack_b);
+	// rrr(&stack_a, &stack_b);
+	// print_stack_(stack_a, stack_b);
+	// pa(&stack_b, &stack_a);
+	// print_stack_(stack_a, stack_b);
+	// pa(&stack_b, &stack_a);
+	// print_stack_(stack_a, stack_b);
+	// pa(&stack_b, &stack_a);
+	// print_stack_(stack_a, stack_b);
+
 	free(stack_a.array);
 	free(stack_b.array);
 	return (0);
