@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 17:10:26 by roversch          #+#    #+#             */
-/*   Updated: 2025/01/31 14:02:27 by roversch         ###   ########.fr       */
+/*   Updated: 2025/01/31 15:43:46 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,24 +29,25 @@ void	rotate(t_stack *stack, const char *ins)
 	}
 	stack->array[stack->index] = tmp;
 }
+
 void	ra(t_stack *stack_a)
 {
 	if (stack_a->index < 1)
-		return;
+		return ;
 	rotate(stack_a, "ra");
 }
 
 void	rb(t_stack *stack_b)
 {
 	if (stack_b->index < 1)
-		return;
+		return ;
 	rotate(stack_b, "rb");
 }
 
 void	rr(t_stack *stack_a, t_stack *stack_b)
 {
 	if (stack_a->index < 1 && stack_b->index < 1)
-		return;
+		return ;
 	rotate(stack_a, "rr");
 	rotate(stack_b, "");
 }

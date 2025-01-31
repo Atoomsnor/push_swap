@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 16:45:57 by roversch          #+#    #+#             */
-/*   Updated: 2025/01/31 14:43:43 by roversch         ###   ########.fr       */
+/*   Updated: 2025/01/31 15:44:18 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ int	main(int argc, char **argv)
 		i++;
 	}
 	print_stack_(stack_a, stack_b);
-
 	// pb(&stack_a, &stack_b);
 	// print_stack_(stack_a, stack_b);
 	// pb(&stack_a, &stack_b);
@@ -89,7 +88,6 @@ int	main(int argc, char **argv)
 	// print_stack_(stack_a, stack_b);
 	// pa(&stack_b, &stack_a);
 	// print_stack_(stack_a, stack_b);
-
 	free(stack_a.array);
 	free(stack_b.array);
 	return (0);
@@ -97,13 +95,11 @@ int	main(int argc, char **argv)
 
 // detect errors()
 
-
 // make negative, positive and change values to valid()
 // -1 4 6 2 becomes
 //  0 2 3 1
 
 // Check if a is sorted()
-
 
 // check size()
 // < 5 goes manual solving

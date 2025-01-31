@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 17:16:31 by roversch          #+#    #+#             */
-/*   Updated: 2025/01/31 14:29:25 by roversch         ###   ########.fr       */
+/*   Updated: 2025/01/31 15:43:15 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ void	push(t_stack *from_stack, t_stack *to_stack, const char *ins)
 {
 	int	i;
 
-	if (from_stack->index < 0)
-		return;
 	printf("%s\n", ins);
 	i = to_stack->index;
 	while (i >= 0) //shift entire destination up to make room
@@ -40,13 +38,13 @@ void	push(t_stack *from_stack, t_stack *to_stack, const char *ins)
 void	pa(t_stack *stack_b, t_stack *stack_a)
 {
 	if (stack_b->index < 0)
-		return;
+		return ;
 	push(stack_b, stack_a, "pa");
 }
 
 void	pb(t_stack *stack_a, t_stack *stack_b)
 {
 	if (stack_a->index < 0)
-		return;
+		return ;
 	push(stack_a, stack_b, "pb");
 }

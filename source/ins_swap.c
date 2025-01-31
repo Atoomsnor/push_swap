@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 17:11:58 by roversch          #+#    #+#             */
-/*   Updated: 2025/01/31 14:36:36 by roversch         ###   ########.fr       */
+/*   Updated: 2025/01/31 15:42:36 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,24 +23,25 @@ void	swap(t_stack *stack, const char *ins)
 	stack->array[0] = stack->array[1];
 	stack->array[1] = tmp;
 }
+
 void	sa(t_stack *stack_a)
 {
 	if (stack_a->index < 1)
-		return;
+		return ;
 	swap(stack_a, "sa");
 }
 
 void	sb(t_stack *stack_b)
 {
 	if (stack_b->index < 1)
-		return;
+		return ;
 	swap(stack_b, "sb");
 }
 
 void	ss(t_stack *stack_a, t_stack *stack_b)
 {
 	if (stack_a->index < 1 && stack_b->index < 1)
-		return;
+		return ;
 	swap(stack_a, "ss");
 	swap(stack_b, "");
 }
