@@ -6,21 +6,27 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 16:45:57 by roversch          #+#    #+#             */
-/*   Updated: 2025/01/31 15:44:18 by roversch         ###   ########.fr       */
+/*   Updated: 2025/02/04 15:52:03 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
 
-void	initiate_stack_(t_stack *stack, int size)
+void	initiate_stack(t_stack *stack, int size)
 {
 	stack->array = (int *)malloc(sizeof(int) * size); //make malloc check
 	stack->size = size;
 	stack->index = -1;
 }
 
-void	print_stack_(t_stack stack_a, t_stack stack_b)
+// void	correct_stack(t_stack stack_a)
+// {
+// 	make -4, -9, 1, 19. into 2 1 3 4
+// 	maybe also check if already sorted
+// }
+
+void	print_stack(t_stack stack_a, t_stack stack_b)
 {
 	int	i;
 
@@ -40,6 +46,22 @@ void	print_stack_(t_stack stack_a, t_stack stack_b)
 	printf("\n");
 }
 
+void	send_stack(t_stack *stack_a, t_stack *stack_b, int size)
+{
+	print_stack(*stack_a, *stack_b);
+	if (size == 2) //check if size < 2 somewhere in main
+		solve2(stack_a);
+	else if (size == 3)
+		solve3(stack_a);
+	else if (size == 4)
+		solve4(stack_a, stack_b);
+	else if (size == 5)
+		solve5(stack_a, stack_b);
+	// else if (size > 5)
+		//radix
+	print_stack(*stack_a, *stack_b);
+}
+
 int	main(int argc, char **argv)
 {
 	t_stack	stack_a;
@@ -48,8 +70,8 @@ int	main(int argc, char **argv)
 	int		i;
 
 	size = argc - 1;
-	initiate_stack_(&stack_a, size); //add malloc failchecks
-	initiate_stack_(&stack_b, size);
+	initiate_stack(&stack_a, size); //add malloc failchecks
+	initiate_stack(&stack_b, size);
 	i = 0;
 	while (i < size)
 	{
@@ -57,37 +79,8 @@ int	main(int argc, char **argv)
 		stack_a.index++;
 		i++;
 	}
-	print_stack_(stack_a, stack_b);
-	// pb(&stack_a, &stack_b);
-	// print_stack_(stack_a, stack_b);
-	// pb(&stack_a, &stack_b);
-	// print_stack_(stack_a, stack_b);
-	// pb(&stack_a, &stack_b);
-	// print_stack_(stack_a, stack_b);
-	// ra(&stack_a);
-	// print_stack_(stack_a, stack_b);
-	// rb(&stack_b);
-	// print_stack_(stack_a, stack_b);
-	// rr(&stack_a, &stack_b);
-	// print_stack_(stack_a, stack_b);
-	// sa(&stack_a);
-	// print_stack_(stack_a, stack_b);
-	// sb(&stack_b);
-	// print_stack_(stack_a, stack_b);
-	// ss(&stack_a, &stack_b);
-	// print_stack_(stack_a, stack_b);
-	// rra(&stack_a);
-	// print_stack_(stack_a, stack_b);
-	// rrb(&stack_b);
-	// print_stack_(stack_a, stack_b);
-	// rrr(&stack_a, &stack_b);
-	// print_stack_(stack_a, stack_b);
-	// pa(&stack_b, &stack_a);
-	// print_stack_(stack_a, stack_b);
-	// pa(&stack_b, &stack_a);
-	// print_stack_(stack_a, stack_b);
-	// pa(&stack_b, &stack_a);
-	// print_stack_(stack_a, stack_b);
+	//correct_stack(&stack_a);
+	send_stack(&stack_a, &stack_b, size);
 	free(stack_a.array);
 	free(stack_b.array);
 	return (0);
@@ -100,7 +93,3 @@ int	main(int argc, char **argv)
 //  0 2 3 1
 
 // Check if a is sorted()
-
-// check size()
-// < 5 goes manual solving
-// else go ridex

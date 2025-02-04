@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 16:17:20 by roversch          #+#    #+#             */
-/*   Updated: 2025/01/31 14:18:16 by roversch         ###   ########.fr       */
+/*   Updated: 2025/02/04 15:53:09 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,11 @@ typedef struct stack
 
 int		main(int argc, char **argv);
 
+void	find_min_index(t_stack *stack);
 void	solve2(t_stack *stack_a);
 void	solve3(t_stack *stack_a);
+void	solve4(t_stack *stack_a, t_stack *stack_b);
+void	solve5(t_stack *stack_a, t_stack *stack_b);
 
 void	swap(t_stack *stack, const char *ins);
 void	sa(t_stack *stack_a);
@@ -44,17 +47,3 @@ void	rra(t_stack *stack_a);
 void	rrb(t_stack *stack_b);
 void	rrr(t_stack *stack_a, t_stack *stack_b);
 #endif
-
-// typedef struct node
-// {
-// 	int			nb;
-// 	struct node	*next;
-// 	struct node	*prev;
-// }	t_node;
-
-// typedef struct stack
-// {
-// 	int		size;
-// 	t_node	*head;
-// 	t_node	*tail;
-// }	t_stack;

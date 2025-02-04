@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 17:11:58 by roversch          #+#    #+#             */
-/*   Updated: 2025/01/31 15:42:36 by roversch         ###   ########.fr       */
+/*   Updated: 2025/02/04 15:47:03 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ void	swap(t_stack *stack, const char *ins)
 
 	if (ins[0] != '\0')
 		printf("%s\n", ins);
-	tmp = stack->array[0]; //
-	stack->array[0] = stack->array[1];
-	stack->array[1] = tmp;
+	tmp = stack->array[0]; //tmp is start of array
+	stack->array[0] = stack->array[1]; //position 0 becomes same as pos 1
+	stack->array[1] = tmp; //pos 1 becomes same as tmp, (0) 
 }
 
 void	sa(t_stack *stack_a)
