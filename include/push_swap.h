@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 16:17:20 by roversch          #+#    #+#             */
-/*   Updated: 2025/02/04 15:53:09 by roversch         ###   ########.fr       */
+/*   Updated: 2025/02/04 17:05:38 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,9 @@ typedef struct stack
 // maybe make enum for (i < stack_a->index) when its in a a/b func
 
 int		main(int argc, char **argv);
+void	print_stack(t_stack *stack_a, t_stack *stack_b);
 
-void	find_min_index(t_stack *stack);
+int		find_min_index(t_stack *stack_a);
 void	solve2(t_stack *stack_a);
 void	solve3(t_stack *stack_a);
 void	solve4(t_stack *stack_a, t_stack *stack_b);
