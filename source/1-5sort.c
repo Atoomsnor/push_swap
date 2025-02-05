@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 14:49:58 by roversch          #+#    #+#             */
-/*   Updated: 2025/02/04 18:26:01 by roversch         ###   ########.fr       */
+/*   Updated: 2025/02/05 17:55:26 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ void	solve5(t_stack *stack_a, t_stack *stack_b)
 	min_index = find_min_index(stack_a); //look where the 1 is
 	while (min_index != 0) //while the 1 is not on top
 	{
-		if (min_index < 2) //if the 1 is on the top half
+		if (min_index < 3) //if the 1 is on the top half
 			ra(stack_a);
 		else //if the i is on the bottom half
 			rra(stack_a);

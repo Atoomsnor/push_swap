@@ -6,34 +6,68 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 16:45:57 by roversch          #+#    #+#             */
-/*   Updated: 2025/02/04 17:59:36 by roversch         ###   ########.fr       */
+/*   Updated: 2025/02/05 18:36:09 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
+#include <limits.h>
 
-void	initiate_stack(t_stack *stack, int size)
+int	initiate_stack(t_stack *stack, int size)
 {
 	stack->array = (int *)malloc(sizeof(int) * size); //make malloc check
+	if (!stack->array)
+		return (-1);
 	stack->size = size;
 	stack->index = -1;
+	// if (stack_a) //maybe atoi/atol in here?
+	// i = 0;
+	// while (i < size)
+	// {
+	// 	stack_a.array[i] = atoi(argv[i + 1]); //send error if input isnt a number
+	// 	stack_a.index++;
+	// 	i++;
+	// }
+	return (1);
 }
 
-int	correct_stack(t_stack *stack_a, int size)
+void	correct_stack(t_stack *stack_a, t_stack *stack_b, int size)
+{
+	int	place_of_min_index;
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < size)
+	{
+		stack_b->array[i] = stack_a->array[i];
+		i++;
+	}
+	i = 0;
+	j = 1;
+	while (i < size)
+	{
+		place_of_min_index = find_min_index(stack_b); //if its 2 1 3 this will return [1]
+		stack_a->array[place_of_min_index] = j;
+		stack_b->array[place_of_min_index] = INT_MAX;
+		j++;
+		i++;
+	}
+}
+
+int	is_solved(t_stack *stack_a, t_stack *stack_b, int size)
 {
 	int	i;
 
 	i = 0;
-	// make -4, -9, 1, 19. into 2 1 3 4
-	// while i < size, find smallest* that > prev, set to i
 	while (i < size - 1)
 	{
 		if (stack_a->array[i] > stack_a->array[i + 1])
 			return (0);
 		i++;
 	}
-	printf("sorted\n");
+	printf("is solved already\n");
 	return (1);
 }
 
@@ -60,7 +94,7 @@ void	print_stack(t_stack *stack_a, t_stack *stack_b)
 void	send_stack(t_stack *stack_a, t_stack *stack_b, int size)
 {
 	print_stack(stack_a, stack_b);
-	if (size == 2) //check if size < 2 somewhere in main
+	if (size == 2)
 		solve2(stack_a);
 	else if (size == 3)
 		solve3(stack_a);
@@ -80,17 +114,25 @@ int	main(int argc, char **argv)
 	int		size;
 	int		i;
 
-	size = argc - 1;
-	initiate_stack(&stack_a, size); //add malloc failchecks
-	initiate_stack(&stack_b, size);
+	size = argc - 1; //make check if agrc is lower then 2
+	if (size < 2)
+		return (-1);
+	if (!initiate_stack(&stack_a, size)) //not sure about this part
+		return (-1);
+	if (!initiate_stack(&stack_b, size))
+	{
+		free(stack_a.array);
+		return (-1);
+	}
 	i = 0;
 	while (i < size)
 	{
-		stack_a.array[i] = atoi(argv[i + 1]);
+		stack_a.array[i] = atoi(argv[i + 1]); //send error if input isnt a number, mayb atol.
 		stack_a.index++;
 		i++;
 	}
-	if (!correct_stack(&stack_a, size))
+	correct_stack(&stack_a, &stack_b, size); //can combine is_solved/send_stack
+	if (!is_solved(&stack_a, &stack_b, size))
 		send_stack(&stack_a, &stack_b, size);
 	free(stack_a.array);
 	free(stack_b.array);
@@ -98,9 +140,3 @@ int	main(int argc, char **argv)
 }
 
 // detect errors()
-
-// make negative, positive and change values to valid()
-// -1 4 6 2 becomes
-//  0 2 3 1
-
-// Check if a is sorted()
