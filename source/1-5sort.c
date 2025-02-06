@@ -6,28 +6,13 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 14:49:58 by roversch          #+#    #+#             */
-/*   Updated: 2025/02/06 13:49:55 by roversch         ###   ########.fr       */
+/*   Updated: 2025/02/06 18:18:59 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
-
-int	find_min_index(t_stack *stack_a)
-{
-	int	min_index;
-	int	i;
-
-	min_index = 0;
-	i = 0;
-	while (i < stack_a->size) //going trough entire array
-	{
-		if (stack_a->array[i] < stack_a->array[min_index]) //compares smallest element so far-
-			min_index = i; //with the current element, "i" will mark its location.
-		i++;
-	}
-	return (min_index);
-}
+#include <limits.h>
 
 void	solve2(t_stack *stack_a)
 {
@@ -96,4 +81,33 @@ void	solve5(t_stack *stack_a, t_stack *stack_b)
 	pb(stack_a, stack_b);
 	solve4(stack_a, stack_b);
 	pa(stack_b, stack_a);
+}
+
+void	radix_sort(t_stack *stack_a, t_stack *stack_b, int size)
+{
+	int max_bits;
+	int i;
+	int j;
+	int num;
+	int bit;
+	
+	max_bits = 0;
+	while ((size - 1) >> max_bits)
+		max_bits++;
+	i = -1;
+	while (++i < max_bits)
+	{
+		j = -1;
+		while (++j < size)
+		{
+			num = stack_a->array[0];
+			bit = (num >> i) & 1;
+			if (bit == 0)
+				pb(stack_a, stack_b);
+			else
+				ra(stack_a);
+		}
+		while (stack_b->index != -1)
+			pa(stack_b, stack_a);
+	}
 }

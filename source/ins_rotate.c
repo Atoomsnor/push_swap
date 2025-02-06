@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 17:10:26 by roversch          #+#    #+#             */
-/*   Updated: 2025/02/04 15:46:08 by roversch         ###   ########.fr       */
+/*   Updated: 2025/02/06 18:14:05 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	rotate(t_stack *stack, const char *ins)
 	int	tmp;
 	int	i;
 
-	if (ins[0] != '\0')
+	if (ins[0] != '\0') // ins[0] == *(ins + sizeof(T) * 0)
 		printf("%s\n", ins);
 	tmp = stack->array[0]; //tmp is start of array
 	i = 0;
