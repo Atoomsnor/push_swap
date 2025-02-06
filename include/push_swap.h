@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 16:17:20 by roversch          #+#    #+#             */
-/*   Updated: 2025/02/04 17:05:38 by roversch         ###   ########.fr       */
+/*   Updated: 2025/02/06 11:53:39 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ void	solve2(t_stack *stack_a);
 void	solve3(t_stack *stack_a);
 void	solve4(t_stack *stack_a, t_stack *stack_b);
 void	solve5(t_stack *stack_a, t_stack *stack_b);
+
+void	radix_sort(t_stack *stack_a, t_stack *stack_b, int size);
 
 void	swap(t_stack *stack, const char *ins);
 void	sa(t_stack *stack_a);

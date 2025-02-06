@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 16:45:57 by roversch          #+#    #+#             */
-/*   Updated: 2025/02/05 18:36:09 by roversch         ###   ########.fr       */
+/*   Updated: 2025/02/06 13:25:41 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ void	print_stack(t_stack *stack_a, t_stack *stack_b)
 
 void	send_stack(t_stack *stack_a, t_stack *stack_b, int size)
 {
-	print_stack(stack_a, stack_b);
+	// print_stack(stack_a, stack_b);
 	if (size == 2)
 		solve2(stack_a);
 	else if (size == 3)
@@ -102,9 +102,9 @@ void	send_stack(t_stack *stack_a, t_stack *stack_b, int size)
 		solve4(stack_a, stack_b);
 	else if (size == 5)
 		solve5(stack_a, stack_b);
-	// else if (size > 5)
-		//radix
-	print_stack(stack_a, stack_b);
+	else if (size > 5)
+		radix_sort(stack_a, stack_b, size);
+	// print_stack(stack_a, stack_b);
 }
 
 int	main(int argc, char **argv)

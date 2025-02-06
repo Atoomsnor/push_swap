@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 14:49:58 by roversch          #+#    #+#             */
-/*   Updated: 2025/02/05 17:55:26 by roversch         ###   ########.fr       */
+/*   Updated: 2025/02/06 13:49:55 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ int	find_min_index(t_stack *stack_a)
 
 void	solve2(t_stack *stack_a)
 {
-	printf("solve2\n");
 	sa(stack_a);
 }
 
@@ -41,7 +40,6 @@ void	solve3(t_stack *stack_a)
 	int	second;
 	int	third;
 
-	printf("solve3\n");
 	first = stack_a->array[0];
 	second = stack_a->array[1];
 	third = stack_a->array[2];
@@ -67,7 +65,6 @@ void	solve4(t_stack *stack_a, t_stack *stack_b)
 {
 	int	min_index;
 
-	printf("solve4\n");
 	min_index = find_min_index(stack_a); //look where the 1 is
 	if (min_index == 1) //if the 1 is in [1]
 		ra(stack_a);
@@ -78,11 +75,8 @@ void	solve4(t_stack *stack_a, t_stack *stack_b)
 	}
 	else if (min_index == 3) //if the 1 is in [3]
 		rra(stack_a);
-	print_stack(stack_a, stack_b);
 	pb(stack_a, stack_b);
-	print_stack(stack_a, stack_b);
 	solve3(stack_a);
-	print_stack(stack_a, stack_b);
 	pa(stack_b, stack_a);
 }
 
@@ -90,7 +84,6 @@ void	solve5(t_stack *stack_a, t_stack *stack_b)
 {
 	int	min_index;
 
-	printf("solve5\n");
 	min_index = find_min_index(stack_a); //look where the 1 is
 	while (min_index != 0) //while the 1 is not on top
 	{
@@ -100,10 +93,7 @@ void	solve5(t_stack *stack_a, t_stack *stack_b)
 			rra(stack_a);
 		min_index = find_min_index(stack_a); //look again after rotating as it changes
 	}
-	print_stack(stack_a, stack_b);
 	pb(stack_a, stack_b);
-	print_stack(stack_a, stack_b);
 	solve4(stack_a, stack_b);
-	print_stack(stack_a, stack_b);
 	pa(stack_b, stack_a);
 }
