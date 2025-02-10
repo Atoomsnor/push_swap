@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 17:08:05 by roversch          #+#    #+#             */
-/*   Updated: 2025/02/04 15:44:53 by roversch         ###   ########.fr       */
+/*   Updated: 2025/02/10 17:03:54 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	reverse_rotate(t_stack *stack, const char *ins)
 	int	i;
 
 	if (ins[0] != '\0')
-		printf("%s\n", ins);
+		ft_printf("%s\n", ins);
 	tmp = stack->array[stack->index]; //tmp is end of array
 	i = stack->index; //nr of i is set to amount of stuff stack
 	while (i > 0)

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handeling_stack.c                                  :+:      :+:    :+:   */
+/*   handling_stack.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 17:12:17 by roversch          #+#    #+#             */
-/*   Updated: 2025/02/06 18:14:59 by roversch         ###   ########.fr       */
+/*   Updated: 2025/02/10 16:24:46 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,21 @@ int	initiate_stack(t_stack *stack, int size)
 		return (-1);
 	stack->size = size;
 	stack->index = -1;
-	// if (stack_a) //MAYBE PUT THIS HERE?
-	// i = 0;
-	// while (i < size)
-	// {
-	// 	stack_a.array[i] = atoi(argv[i + 1]); //send error if input isnt a number
-	// 	stack_a.index++;
-	// 	i++;
-	// }
+	return (1);
+}
+
+int	check_stack(t_stack *stack_a, char **argv, int size)
+{
+	int		i;
+
+	i = 0;
+	while (i < size)
+	{
+		stack_a->array[i] = atol(argv[i + 1]); // Corrected index
+		i++;
+	}
+	stack_a->size = size;
+	stack_a->index = stack_a->size - 1;
 	return (1);
 }
 
@@ -48,7 +55,7 @@ int	find_min_index(t_stack *stack_a)
 	return (min_index);
 }
 
-void	correct_stack(t_stack *stack_a, t_stack *stack_b, int size)
+void	normalize_stack(t_stack *stack_a, t_stack *stack_b, int size)
 {
 	int	place_of_min_index;
 	int	i;
