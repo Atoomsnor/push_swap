@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 16:17:20 by roversch          #+#    #+#             */
-/*   Updated: 2025/02/10 19:53:52 by roversch         ###   ########.fr       */
+/*   Updated: 2025/02/10 20:27:29 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ typedef struct stack
 }	t_stack;
 
 int		main(int argc, char **argv);
-void	print_stack(t_stack *stack_a, t_stack *stack_b);
-char	**ft_split(char const *s, char c);
 
 int		initiate_stack(t_stack *stack, int size);
 int		check_stack(t_stack *stack_a, char **argv, int size);

@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 17:12:17 by roversch          #+#    #+#             */
-/*   Updated: 2025/02/10 20:17:19 by roversch         ###   ########.fr       */
+/*   Updated: 2025/02/10 20:29:02 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,10 @@ int	find_min_index(t_stack *stack_a)
 
 	min_index = 0;
 	i = 0;
-	while (i < stack_a->size) //going trough entire array
+	while (i < stack_a->size)
 	{
 		if (stack_a->array[i] < stack_a->array[min_index])
-			min_index = i; //with the current element, "i" will mark its location.
+			min_index = i;
 		i++;
 	}
 	return (min_index);
@@ -85,7 +85,7 @@ void	normalize_stack(t_stack *stack_a, t_stack *stack_b, int size)
 	j = 1;
 	while (i < size)
 	{
-		place_of_min_index = find_min_index(stack_b); //if its 2 1 3 this will return [1]
+		place_of_min_index = find_min_index(stack_b);
 		stack_a->array[place_of_min_index] = j;
 		stack_b->array[place_of_min_index] = INT_MAX;
 		j++;
@@ -101,7 +101,7 @@ void	send_stack(t_stack *stack_a, t_stack *stack_b, int size)
 	while (i < size - 1)
 	{
 		if (stack_a->array[i] > stack_a->array[i + 1])
-				break;
+			break ;
 		i++;
 	}
 	if (i < size - 1)

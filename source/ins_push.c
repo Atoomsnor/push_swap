@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 17:16:31 by roversch          #+#    #+#             */
-/*   Updated: 2025/02/10 17:03:58 by roversch         ###   ########.fr       */
+/*   Updated: 2025/02/10 20:26:01 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,20 @@ void	push(t_stack *from_stack, t_stack *to_stack, const char *ins)
 
 	ft_printf("%s\n", ins);
 	i = to_stack->index;
-	while (i >= 0) //shift entire destination up to make room
+	while (i >= 0)
 	{
 		to_stack->array[i + 1] = to_stack->array[i];
 		i--;
 	}
-	to_stack->array[0] = from_stack->array[0]; //copy top to top
-	to_stack->index++; //say we have 1 more now
+	to_stack->array[0] = from_stack->array[0];
+	to_stack->index++;
 	i = 0;
-	while (i < from_stack->index) //move entire from down to fill up hole
+	while (i < from_stack->index)
 	{
 		from_stack->array[i] = from_stack->array[i + 1];
 		i++;
 	}
-	from_stack->index--; //say we have 1 less now
+	from_stack->index--;
 }
 
 void	pa(t_stack *stack_b, t_stack *stack_a)

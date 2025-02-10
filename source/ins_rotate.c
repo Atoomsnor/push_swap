@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 17:10:26 by roversch          #+#    #+#             */
-/*   Updated: 2025/02/10 17:04:03 by roversch         ###   ########.fr       */
+/*   Updated: 2025/02/10 20:26:43 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,16 @@ void	rotate(t_stack *stack, const char *ins)
 	int	tmp;
 	int	i;
 
-	if (ins[0] != '\0') // ins[0] == *(ins + sizeof(T) * 0)
+	if (ins[0] != '\0')
 		ft_printf("%s\n", ins);
-	tmp = stack->array[0]; //tmp is start of array
+	tmp = stack->array[0];
 	i = 0;
-	while (i < stack->index) //while i is smaller then the max index
+	while (i < stack->index)
 	{
-		stack->array[i] = stack->array [i + 1]; //i becomes whatever is in the position after
-		i++; //[1] 2 becomes [1] 3
+		stack->array[i] = stack->array [i + 1];
+		i++;
 	}
-	stack->array[stack->index] = tmp; //last and 2nd last are same, so we put tmp at end
+	stack->array[stack->index] = tmp;
 }
 
 void	ra(t_stack *stack_a)

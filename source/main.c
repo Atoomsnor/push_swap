@@ -6,33 +6,13 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 16:45:57 by roversch          #+#    #+#             */
-/*   Updated: 2025/02/10 19:58:10 by roversch         ###   ########.fr       */
+/*   Updated: 2025/02/10 20:27:17 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
 #include <limits.h>
-
-void	print_stack(t_stack *stack_a, t_stack *stack_b)
-{
-	int	i;
-
-	i = 0;
-	printf("A\tB\n");
-	while (i < stack_a->size || i < stack_b->size)
-	{
-		if (i <= stack_a->index) //print elements of stack_a up to its index
-			printf("%d\t", stack_a->array[i]);
-		else
-			printf("\t"); //empty space for stack_a
-		if (i <= stack_b->index) //print elements of stack_b up to its index
-			printf("%d", stack_b->array[i]);
-		i++;
-		printf("\n");
-	}
-	printf("\n");
-}
 
 int	main(int argc, char **argv)
 {
@@ -48,14 +28,12 @@ int	main(int argc, char **argv)
 	if (!initiate_stack(&stack_b, size))
 	{
 		free(stack_a.array);
-		return ((ft_printf("Error\n"), -1)); //can combine this in 1line
+		return ((ft_printf("Error\n"), -1));
 	}
 	if (!check_stack(&stack_a, argv, size))
 		return ((ft_printf("Error\n"), -1));
 	normalize_stack(&stack_a, &stack_b, size);
-	// print_stack(&stack_a, &stack_b);
 	send_stack(&stack_a, &stack_b, size);
-	// print_stack(&stack_a, &stack_b);
 	free(stack_a.array);
 	free(stack_b.array);
 	return (0);

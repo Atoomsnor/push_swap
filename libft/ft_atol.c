@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 14:39:23 by roversch          #+#    #+#             */
-/*   Updated: 2025/02/10 20:16:17 by roversch         ###   ########.fr       */
+/*   Updated: 2025/02/10 20:28:36 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 long	ft_atol(const char *nptr)
 {
 	long	result;
-	int	parity;
-	int	i;
+	int		parity;
+	int		i;
 
 	result = 0;
 	parity = 1;
@@ -36,6 +36,6 @@ long	ft_atol(const char *nptr)
 		i++;
 	}
 	if (!(nptr[i] == '\0') && !(nptr[i] == ' '))
-			return (0);
+		return (0);
 	return (result * parity);
 }

@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 17:08:05 by roversch          #+#    #+#             */
-/*   Updated: 2025/02/10 17:03:54 by roversch         ###   ########.fr       */
+/*   Updated: 2025/02/10 20:26:29 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ void	reverse_rotate(t_stack *stack, const char *ins)
 
 	if (ins[0] != '\0')
 		ft_printf("%s\n", ins);
-	tmp = stack->array[stack->index]; //tmp is end of array
-	i = stack->index; //nr of i is set to amount of stuff stack
+	tmp = stack->array[stack->index];
+	i = stack->index;
 	while (i > 0)
 	{
-		stack->array[i] = stack->array[i - 1]; //coppies from back to front 
-		i--; //[1] 2 becomes [1] 1
+		stack->array[i] = stack->array[i - 1];
+		i--;
 	}
-	stack->array[0] = tmp; //put tmp at the begin
+	stack->array[0] = tmp;
 }
 
 void	rra(t_stack *stack_a)
