@@ -6,12 +6,11 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 17:08:05 by roversch          #+#    #+#             */
-/*   Updated: 2025/02/10 20:26:29 by roversch         ###   ########.fr       */
+/*   Updated: 2025/02/10 20:31:38 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 void	reverse_rotate(t_stack *stack, const char *ins)
 {

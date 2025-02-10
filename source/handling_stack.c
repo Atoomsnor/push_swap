@@ -6,12 +6,11 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 17:12:17 by roversch          #+#    #+#             */
-/*   Updated: 2025/02/10 20:29:02 by roversch         ###   ########.fr       */
+/*   Updated: 2025/02/10 20:33:20 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 #include <limits.h>
 
 int	initiate_stack(t_stack *stack, int size)

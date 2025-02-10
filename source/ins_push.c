@@ -6,12 +6,11 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 17:16:31 by roversch          #+#    #+#             */
-/*   Updated: 2025/02/10 20:26:01 by roversch         ###   ########.fr       */
+/*   Updated: 2025/02/10 20:31:35 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 void	push(t_stack *from_stack, t_stack *to_stack, const char *ins)
 {
