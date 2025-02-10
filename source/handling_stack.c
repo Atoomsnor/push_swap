@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 17:12:17 by roversch          #+#    #+#             */
-/*   Updated: 2025/02/10 16:24:46 by roversch         ###   ########.fr       */
+/*   Updated: 2025/02/10 20:17:19 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	initiate_stack(t_stack *stack, int size)
 {
 	stack->array = (int *)malloc(sizeof(int) * size);
 	if (!stack->array)
-		return (-1);
+		return (0);
 	stack->size = size;
 	stack->index = -1;
 	return (1);
@@ -27,11 +27,25 @@ int	initiate_stack(t_stack *stack, int size)
 int	check_stack(t_stack *stack_a, char **argv, int size)
 {
 	int		i;
+	int		j;
+	long	temp;
 
 	i = 0;
 	while (i < size)
 	{
-		stack_a->array[i] = atol(argv[i + 1]); // Corrected index
+		temp = ft_atol(argv[i + 1]);
+		if (!temp)
+			return (0);
+		if (temp < INT_MIN || temp > INT_MAX)
+			return (0);
+		j = 0;
+		while (j < i)
+		{
+			if (stack_a->array[j] == temp)
+				return (0);
+			j++;
+		}
+		stack_a->array[i] = (int)temp;
 		i++;
 	}
 	stack_a->size = size;
