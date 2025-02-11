@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 16:17:20 by roversch          #+#    #+#             */
-/*   Updated: 2025/02/10 20:27:29 by roversch         ###   ########.fr       */
+/*   Updated: 2025/02/11 16:25:19 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,18 +36,18 @@ void	solve4(t_stack *stack_a, t_stack *stack_b);
 void	solve5(t_stack *stack_a, t_stack *stack_b);
 void	radix_sort(t_stack *stack_a, t_stack *stack_b, int size);
 
-void	swap(t_stack *stack, const char *ins);
+void	swap(t_stack *stack);
 void	sa(t_stack *stack_a);
 void	sb(t_stack *stack_b);
 void	ss(t_stack *stack_a, t_stack *stack_b);
-void	push(t_stack *from_stack, t_stack *to_stack, const char *ins);
+void	push(t_stack *from_stack, t_stack *to_stack);
 void	pa(t_stack *stack_a, t_stack *stack_b);
 void	pb(t_stack *stack_a, t_stack *stack_b);
-void	rotate(t_stack *stack, const char *instruct);
+void	rotate(t_stack *stack);
 void	ra(t_stack *stack_a);
 void	rb(t_stack *stack_b);
 void	rr(t_stack *stack_a, t_stack *stack_b);
-void	reverse_rotate(t_stack *stack, const char *instruct);
+void	reverse_rotate(t_stack *stack);
 void	rra(t_stack *stack_a);
 void	rrb(t_stack *stack_b);
 void	rrr(t_stack *stack_a, t_stack *stack_b);
