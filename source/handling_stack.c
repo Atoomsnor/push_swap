@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 17:12:17 by roversch          #+#    #+#             */
-/*   Updated: 2025/02/11 16:09:09 by roversch         ###   ########.fr       */
+/*   Updated: 2025/02/13 13:11:45 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	check_stack(t_stack *stack_a, char **argv, int size)
 	while (i < size)
 	{
 		temp = ft_atol(argv[i + 1]);
-		if (!temp)
+		if (!temp && argv[i + 1][0] != '0')
 			return (0);
 		if (temp < INT_MIN || temp > INT_MAX)
 			return (0);
