@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 16:45:57 by roversch          #+#    #+#             */
-/*   Updated: 2025/02/13 13:11:15 by roversch         ###   ########.fr       */
+/*   Updated: 2025/02/17 14:18:59 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int argc, char **argv)
 
 	size = argc - 1;
 	if (size < 2)
-		return (write(2, "Error\n", 6), -1);
+		return (0);
 	if (!initiate_stack(&stack_a, size))
 		return (write(2, "Error\n", 6), -1);
 	if (!initiate_stack(&stack_b, size))

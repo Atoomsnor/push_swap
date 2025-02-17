@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 14:49:58 by roversch          #+#    #+#             */
-/*   Updated: 2025/02/10 20:33:02 by roversch         ###   ########.fr       */
+/*   Updated: 2025/02/17 14:18:22 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	solve3(t_stack *stack_a)
 	first = stack_a->array[0];
 	second = stack_a->array[1];
 	third = stack_a->array[2];
-	if (first < second && first < third)
+	if (first < second && first < third && second > third)
 	{
 		sa(stack_a);
 		ra(stack_a);
